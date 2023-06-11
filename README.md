@@ -4,12 +4,13 @@
 |-------------------|------------------------------|
 |**Instructor:**    | Hao Ji                       |
 |**Email:**         | hji@cpp.edu                  |
-|**Class Times:**   | M 7:00-9:00 pm               |
+|**Class Times:**   | Asynchronous                 |
 |**Class Location:**| Asynchronous                 |
+|**Office Hours:**  | M 7:00-9:00 pm               |
 
 ### Assignments:
 
-  * **Assignment 1:** Bags
+  * **Assignment 1:** Resizable Array Bag & Linked Bag
   * **Assignment 2:** 
   * **Assignment 3:** 
 
@@ -19,9 +20,9 @@
   * **Lecture 2:** Review of Java Programming Basics, Interface, and Generic Data Types
   * **Lecture 3:** Bags
   * **Lecture 4:** Efficiency of Algorithms
-  * **Lecture 5:** 
-  * **Lecture 6:** 
-  * **Lecture 7:** 
+  * **Lecture 5:** Lists
+  * **Lecture 6:** Stacks
+  * **Lecture 7:** Recursions
   * **Lecture 8:** 
   * **Lecture 9:** 
   * **Lecture 10:** 
