@@ -8,11 +8,11 @@
 |**Class Location:**| Asynchronous                 |
 |**Office Hours:**  | M 7:00-9:00 pm               |
 
-### Assignments:
+### Projects:
 
-  * **Assignment 1:** Resizable Array Bag & Linked Bag
-  * **Assignment 2:** 
-  * **Assignment 3:** 
+  * **Project 1:** Resizable Array Bag & Linked Bag
+  * **Project 2:** 
+  * **Project 3:** 
 
 ### Lectures:
 
