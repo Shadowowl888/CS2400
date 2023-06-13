@@ -9,11 +9,6 @@ public class LinkedBag<T> implements BagInterface<T> {
         numberOfEntries = 0;
     }
 
-    public LinkedBag(Node anEntry) {
-        firstNode = anEntry;
-        numberOfEntries++;
-    }
-
     /**
      * Gets the number of entries currently in this bag.
      * @return  The integer number of entries currently in this bag.
