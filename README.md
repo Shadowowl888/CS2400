@@ -23,11 +23,13 @@
   * **Lecture 5:** Lists
   * **Lecture 6:** Stacks
   * **Lecture 7:** Recursions
-  * **Lecture 8:** 
-  * **Lecture 9:** 
-  * **Lecture 10:** 
-  * **Lecture 11:** 
-  * **Lecture 12:** 
+  * **Lecture 8:** Trees (I)
+  * **Lecture 9:** Trees (II) - Heaps
+  * **Lecture 10:** Trees (III) - BSTs
+  * **Lecture 11:** Queues
+  * **Lecture 12:** Graphs
+  * **Lecture 13:** Dictionaries
+  * **Lecture 14:** Hashing
 
 ### Exams:
 
