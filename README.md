@@ -11,8 +11,8 @@
 ### Projects:
 
   * **Project 1:** Resizable Array Bag & Linked Bag
-  * **Project 2:** 
-  * **Project 3:** 
+  * **Project 2:** Binary Heap & Time Complexities of Heap Operations
+  * **Project 3:** Graph & Graph Operations
 
 ### Lectures:
 
