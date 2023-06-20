@@ -39,10 +39,6 @@ public class BinaryNode<T> {
         return leftChild != null;
     }
 
-    public boolean isLeaf() {
-        return (leftChild == null) && (rightChild == null);
-    }
-
     public BinaryNode<T> getRightChild() {
         return rightChild;
     }
@@ -55,7 +51,17 @@ public class BinaryNode<T> {
         return rightChild != null;
     }
 
-    public void preorderTraverse_binaryNode(BinaryNode<T> node) {
-        
+    public boolean isLeaf() {
+        return (leftChild == null) && (rightChild == null);
+    }
+
+    public void preorderTraverse_binaryNode() {
+        System.out.println(data);
+        if (leftChild != null) {
+            leftChild.preorderTraverse_binaryNode();
+        }
+        if (rightChild != null) {
+            rightChild.preorderTraverse_binaryNode();
+        }
     }
 }

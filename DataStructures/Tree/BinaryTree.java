@@ -18,11 +18,11 @@ public class BinaryTree<T> {
     }
 
     public void preorderTraverse() {
-        preorderTraverse(root);
-        //root.preorderTraverse_binaryNode(root);
+        //preorderTraverse(root);
+        root.preorderTraverse_binaryNode();
     }
 
-    public void preorderTraverse(BinaryNode<T> node) {
+    private void preorderTraverse(BinaryNode<T> node) {
         if (node != null) {
             System.out.println(node.getData());
             preorderTraverse(node.getLeftChild());

@@ -2,7 +2,8 @@ package DataStructures.Tree;
 
 public class Client {
     public static void main(String[] args) {
-        BinaryTree<String> eTree = new BinaryTree<String>("E");
+        BinaryTree<String> fTree = new BinaryTree<String>("F");
+        BinaryTree<String> eTree = new BinaryTree<String>("E", fTree, null);
         BinaryTree<String> dTree = new BinaryTree<String>("D", eTree, null);
         BinaryTree<String> bTree = new BinaryTree<String>("B", null, dTree);
         BinaryTree<String> cTree = new BinaryTree<String>("C");
