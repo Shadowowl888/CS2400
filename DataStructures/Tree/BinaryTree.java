@@ -1,6 +1,6 @@
 package DataStructures.Tree;
 
-public class BinaryTree<T> {
+public class BinaryTree<T extends Comparable<? super T>> {
     private BinaryNode<T> root;
 
     public BinaryTree() {
@@ -93,6 +93,28 @@ public class BinaryTree<T> {
         return root.removeRightmost();
     }
 
+    public BinaryNode<T> getRootNode() {
+        return root;
+    }
+
+    public void setRootNode(BinaryNode<T> node) {
+        root = node;
+    }
+
+    public T getEntry(T entry) {
+        return findEntry(getRootNode(), entry);
+    }
+
+    public T add(T newEntry) {
+        T result = null;
+        if (isEmpty()) {
+            setRootNode(new BinaryNode<T>(newEntry));
+        } else {
+            result = addEntry(getRootNode(), newEntry);
+        }
+        return result;
+    }
+
     private void preorderTraverse(BinaryNode<T> node) {
         if (node != null) {
             System.out.println(node.getData());
@@ -151,5 +173,78 @@ public class BinaryTree<T> {
         } else {
             return getRightmostData(node.getRightChild());
         }
+    }
+
+    private T findEntry(BinaryNode<T> rootNode, T entry) {
+        T result = null;
+        if (rootNode != null) {
+            T rootEntry = rootNode.getData();
+            if (entry.equals(rootEntry)) {
+                result = rootEntry;
+            } else if (entry.compareTo(rootEntry) < 0) {
+                result = findEntry(rootNode.getLeftChild(), entry);
+            } else {
+                result = findEntry(rootNode.getRightChild(), entry);
+            }
+        }
+        return result;
+    }
+
+    private T addEntry(T newEntry) {
+        BinaryNode<T> currentNode = getRootNode();
+        assert currentNode != null;
+        T result = null;
+        boolean found = false;
+        while (!found) {
+            T currentEntry = currentNode.getData();
+            int comparison = newEntry.compareTo(currentEntry);
+            if (comparison == 0) {
+                // newEntry matches currentEntry
+                // return and replace currentEntry
+                found = true;
+                result = currentEntry;
+                currentNode.setData(newEntry);
+            } else if (comparison < 0) {
+                if (currentNode.hasLeftChild()) {
+                    currentNode = currentNode.getLeftChild();
+                } else {
+                    found = true;
+                    currentNode.setLeftChild(new BinaryNode<>(newEntry));
+                }
+            } else {
+                assert comparison > 0;
+                if (currentNode.hasRightChild()) {
+                    currentNode = currentNode.getRightChild();
+                } else {
+                    found = true;
+                    currentNode.setRightChild(new BinaryNode<>(newEntry));
+                }
+            }
+        }
+        return result;
+    }
+
+    private T addEntry(BinaryNode<T> rootNode, T newEntry) {
+        assert rootNode != null;
+        T result = null;
+        int comparison = newEntry.compareTo(rootNode.getData());
+        if (comparison == 0) {
+            result = rootNode.getData();
+            rootNode.setData(newEntry);
+        } else if (comparison < 0) {
+            if (rootNode.hasLeftChild()) {
+                result = addEntry(rootNode.getLeftChild(), newEntry);
+            } else {
+                rootNode.setLeftChild(new BinaryNode<>(newEntry));
+            }
+        } else {
+            assert comparison > 0;
+            if (rootNode.hasRightChild()) {
+                result = addEntry(rootNode.getRightChild(), newEntry);
+            } else {
+                rootNode.setRightChild(new BinaryNode<>(newEntry));
+            }
+        }
+        return result;
     }
 }
