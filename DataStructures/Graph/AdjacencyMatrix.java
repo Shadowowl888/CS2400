@@ -1,20 +1,21 @@
 package DataStructures.Graph;
 
+
 import java.util.Arrays;
 
-public class Graph<E> {
+public class AdjacencyMatrix<E> {
     private boolean[][] edges;
     private E[] labels;
 
-    public Graph(int n) {
+    public AdjacencyMatrix(int n) {
         edges = new boolean[n][n];
         labels = (E[]) new Object[n];
     }
 
     /**
      * Accessor method to get the label of a vertex of this Graph.
-     * @param vertex
-     * @return
+     * @param vertex  A vertex of the graph.
+     * @return  The label of the specificed vertex.
      */
     public E getLabel(int vertex) {
         return labels[vertex];
@@ -22,9 +23,9 @@ public class Graph<E> {
 
     /**
      * Test whether an edge exists.
-     * @param source
-     * @param target
-     * @return
+     * @param source  The source vertex of the graph.
+     * @param target  The target vertex of the graph.
+     * @return  True if an edge exists between the source and target vertexes, or False otherwise.
      */
     public boolean isEdge(int source, int target) {
         return edges[source][target];
@@ -32,8 +33,8 @@ public class Graph<E> {
 
     /**
      * Add an edge.
-     * @param source
-     * @param target
+     * @param source  The source vertex of the graph.
+     * @param target  The target vertex of the graph.
      */
     public void addEdge(int source, int target) {
         edges[source][target] = true;
@@ -41,8 +42,8 @@ public class Graph<E> {
 
     /**
      * Remove an edge.
-     * @param source
-     * @param target
+     * @param source  The source vertex of the graph.
+     * @param target  The target vertex of the graph.
      */
     public void removeEdge(int source, int target) {
         edges[source][target] = false;
@@ -50,8 +51,8 @@ public class Graph<E> {
 
     /**
      * Obtain a list of neighbors of a specified vertex of this Graph.
-     * @param vertex
-     * @return
+     * @param vertex  A vertex of the graph to find neighbors of.
+     * @return  Array of neighbors for the vertex on the graph.
      */
     public int[] neighbors(int vertex) {
         int i;
@@ -74,8 +75,8 @@ public class Graph<E> {
 
     /**
      * Change the label of a vertex of this Graph.
-     * @param vertex
-     * @param newLabel
+     * @param vertex  The vertex on the graph.
+     * @param newLabel  The new label for the vertex.
      */
     public void setLabel(int vertex, E newLabel) {
         labels[vertex] = newLabel;
@@ -89,7 +90,7 @@ public class Graph<E> {
     }
     
     public static void main(String[] args) {
-        Graph<String> matrix = new Graph<>(9);
+        AdjacencyMatrix<String> matrix = new AdjacencyMatrix<>(9);
 
         // Add edges of Node A
         matrix.addEdge(0, 1);
@@ -105,6 +106,7 @@ public class Graph<E> {
         matrix.addEdge(4,7);
         matrix.addEdge(4,5);
         // Add edges of Node F
+        matrix.addEdge(5,2);
         matrix.addEdge(5,7);
         // Add edges of Node G
         matrix.addEdge(6,7);
@@ -124,12 +126,7 @@ public class Graph<E> {
         matrix.setLabel(7, "H");
         matrix.setLabel(8, "I");
 
-        System.out.println("The size of the adjacency matrix is: " + matrix.size());
-
-        System.out.println("Is there an edge between A and E? " + matrix.isEdge(0,4));
-
-        System.out.println("Is there an edge between D and H? " + matrix.isEdge(3,7));
-
+        // Print neighbors of Vertex E
         System.out.println("Vertex " + matrix.getLabel(4) + " neighbors are " + Arrays.toString(matrix.neighbors(4)));
         System.out.println("Vertex 5 is " + matrix.getLabel(5));
         System.out.println("Vertex 7 is " + matrix.getLabel(7));
